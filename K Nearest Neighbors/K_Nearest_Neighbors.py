@@ -1,6 +1,9 @@
+###################### K NEAREST NEIGHBORS ALGO ######################
+
 import numpy as np
 from sklearn import preprocessing, cross_validation, neighbors
 import pandas as pd
+import matplotlib.pyplot as plt
 
  # Read Data
 df = pd.read_csv("D:/University Selection System/Datasets/TrialDataset_2_CSV.csv")
@@ -49,3 +52,20 @@ Test_TargetVar = Test_TargetVar.reshape(len(Test_TargetVar),-1)
 predictions= clf.predict(Test_TargetVar)
 
 print("Prediction:",predictions)
+
+
+slices = [(accuracy*100),((1-accuracy)*100)]
+activities = ['Accurate','Not Accurate']
+cols = ['c','lightgrey']
+
+plt.pie(slices,
+        labels=activities,
+        colors=cols,
+        startangle=90,
+        shadow= True,
+        explode=(0.1,0),
+        autopct='%1.1f%%' )
+
+plt.title('University Selection System\n\nK Nearest Neighbors Accuracy')
+plt.savefig('D:/University Selection System/Results of Algos/KNearestNeighborsAccuracy.png')
+plt.show()

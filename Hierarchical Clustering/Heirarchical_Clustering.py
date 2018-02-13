@@ -1,3 +1,6 @@
+###################### HEIRARCHICAL CLUSTERING ALGO ######################
+
+
 import numpy as np
 import pandas as pd
 from sklearn.cluster import MeanShift# as ms
@@ -51,7 +54,9 @@ for i in range(len(X)):
 ax.scatter(cluster_centers[:,0],cluster_centers[:,1],cluster_centers[:,2],
             marker="x",color='k', s=150, linewidths = 5, zorder=10)
 ax.text(cluster_centers[0,0],cluster_centers[0,1],cluster_centers[0,2],
-            '%s,%s,%s' %(str(int(cluster_centers[0,0])),str(int(cluster_centers[0,1])),str(round(cluster_centers[0,2], 2))),
+            '%s,%s,%s'  %(str(int(cluster_centers[0,0])),
+                         str(int(cluster_centers[0,1])),
+                         str(round(cluster_centers[0,2], 2))),
             size=7,color='b')
 # ax.text(cluster_centers[:,0],cluster_centers[:,1],cluster_centers[:,2],
 #             '%s' % (str(cluster_centers[:,1])),size=10,color='b')
